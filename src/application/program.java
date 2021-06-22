@@ -1,15 +1,18 @@
 package application;
 
-import model.entities.Department;
+
+import model.dao.DaoFactory;
+import model.dao.SellerDao;
+import model.entities.Seller;
 
 public class program {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Department dp = new Department(1, "books");
-		System.out.println(dp);
-		
+		SellerDao sellerDao = DaoFactory.createSellerDao();
+		Seller seller = sellerDao.findById(3);
+		System.out.println(seller);
 	}
 
 }
